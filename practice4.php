@@ -10,6 +10,7 @@ Author: Josselyn Bui
 Date: 2024-06-05
 File Description: This is the practice4.php file for the PHP practice assignment.
 Lab: EECS 348 Tu 1pm
+Collaborators: Claude
 -->
 
 <!DOCTYPE html>
