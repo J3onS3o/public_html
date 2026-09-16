@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Link to the external CSS file for styling the page -->
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    </head>
+    <body>
+        <!--
+            JavaScript Password Verification:
+            Create a JavaScript program that allows the user to enter a password
+            two times to verify them. If the password is not at least eight
+            characters long or if the two passwords are different, alert the user.
+            Otherwise, tell the user that the two passwords are matched.
+        -->
+
+        <!-- Heading for the password verification form -->
+        <h2>Password Verification</h2>
+
+        <!-- First password field -->
+        <label for="password1">Enter Password:</label>
+        <input type="password" id="password1"><br><br>
+
+        <!-- Second password field -->
+        <label for="password2">Re-enter Password:</label>
+        <input type="password" id="password2"><br><br>
+
+        <!-- Button that runs the verification function -->
+        <button onclick="verifyPassword()">Verify Password</button>
+
+        <script>
+            // Define a function that checks whether both passwords are valid.
+            function verifyPassword() {
+                // Read the values typed into the password text boxes.
+                const password1 = document.getElementById("password1").value;
+                const password2 = document.getElementById("password2").value;
+
+                // If either password is too short or the two values do not match, show an error.
+                if (password1.length < 8 || password2.length < 8 || password1 !== password2) {
+                    // Tell the user the password requirements and mismatch issue.
+                    alert("Password must be at least eight characters long and the two passwords must match.");
+                } else {
+                    // Otherwise, confirm that both password entries match.
+                    alert("Two passwords are matched.");
+                }
+            }
+        </script>
+    </body>
+</html>

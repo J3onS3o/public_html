@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>  
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+
+    <style>
+        /* Layout for the main content area and cards */
+        .content-grid {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Shared styling for content panels */
+        .content-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for the about paragraph text and border */
+        #aboutText {
+            margin: 0;
+            padding: 20px;
+            border: 3px solid rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        /* Controls panel arranged in a vertical stack */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 220px;
+        }
+
+        /* Basic styling for text inputs */
+        input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!--CSS Font Control Create a web page that has a paragraph with some dummy text. Near the paragraph, have a text field to accept RGB values to form
+any colors for the paragraph and the border. You also need to control the width of the border.-->
+
+    <!-- Main Content -->
+    <div class="content-grid">
+        <div class="content-card">
+            <p id="aboutText">Hello I am Josselyn. This is my about me page. My favorite colors are black, red, tan, and white. I recently have been into hyper pop.
+                Right now I am listening to a lot of Jane Remover, Tsubi Club, Tiffany Day, underscores, and Charli XCX. My favorite food is banh mi and Chick-fil-a.
+                My favorite drink is black tea and hot water. My favorite movie is Ocean's Eleven. For fun I play League of Legends and chud. One thing
+                I think the world needs more of is live music performances and public spaces. I can never walk the street anymore and see people busking
+                with crowds gathering around and having fun. Some books I've been into recently are Omniscient Reader's Viewpoint and Lord of the Mysteries. Thank you for reading ^^</p>
+        </div>
+
+        <!-- Controls -->
+        <div class="content-card controls">
+            <label for="textColor">Text Color (RGB):</label>
+            <input type="text" id="textColor" name="textColor" value="0,0,0" placeholder="e.g., 0,0,0">
+
+            <label for="borderColor">Border Color (RGB):</label>
+            <input type="text" id="borderColor" name="borderColor" value="0,0,0" placeholder="e.g., 255,0,0">
+
+            <label for="borderWidth">Border Width (px):</label>
+            <input type="number" id="borderWidth" name="borderWidth" min="0" max="50" value="3">
+        </div>
+    </div>
+
+    <script>
+        // Get references to the input controls and the text element.
+        const textColorInput = document.getElementById('textColor');
+        const borderColorInput = document.getElementById('borderColor');
+        const borderWidthInput = document.getElementById('borderWidth');
+        const aboutText = document.getElementById('aboutText');
+
+        // Convert a comma-separated RGB string like "255,0,0" into an rgb(...) CSS value.
+        function parseRgb(value) {
+            const numbers = value.split(',').map((part) => Number(part.trim()));
+            return numbers.length === 3 && numbers.every((num) => !isNaN(num) && num >= 0 && num <= 255)
+                ? `rgb(${numbers.join(', ')})`
+                : null;
+        }
+
+        // Update the paragraph styles based on the current control values.
+        function updateStyles() {
+            // Use the parsed RGB value or fall back to black if the input is invalid.
+            const textColor = parseRgb(textColorInput.value) || 'rgb(0, 0, 0)';
+            const borderColor = parseRgb(borderColorInput.value) || 'rgb(0, 0, 0)';
+
+            // Keep border width at a minimum of 0 and default to 3px if invalid.
+            const borderWidth = Math.max(0, Number(borderWidthInput.value) || 3);
+
+            aboutText.style.color = textColor;
+            aboutText.style.borderColor = borderColor;
+            aboutText.style.borderWidth = borderWidth + 'px';
+        }
+
+        // Listen for changes to each input and apply the updated styles immediately.
+        textColorInput.addEventListener('input', updateStyles);
+        borderColorInput.addEventListener('input', updateStyles);
+        borderWidthInput.addEventListener('input', updateStyles);
+
+        // Apply the initial styling when the page loads.
+        updateStyles();
+    </script>
+</body>
+</html>
