@@ -15,12 +15,8 @@ $num = max(1, $num);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Show the browser tab title. -->
     <title>Multiplication Table</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <style>
-        /* Style the overall page body. */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 30px;
-        }
         /* Add space below the form. */
         form {
             margin-bottom: 20px;

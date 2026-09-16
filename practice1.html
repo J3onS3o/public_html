@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>  
 <head>
+    <!-- Set the character encoding for the page. -->
+    <meta charset="UTF-8">
+    <!-- Make the page responsive on mobile devices. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Show the browser tab title. -->
+    <title>About Me</title>
+
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <style>
         /* Creates a 3-column layout for the content cards on the page. */
@@ -51,13 +58,16 @@
         <div class="content-card">
             <a href="https://www.linkedin.com/in/josselyntbui/">Please follow my LinkedIn.</a>
         </div>
-        <div class="content-card">
-            <p>This is my favorite Jane Remover song right now!</p>
-            <video controls>
-                <source src="https://youtu.be/2rwvuf6i9GA?list=RD2rwvuf6i9GA" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+    <div class="content-card">
+        <p>This is my favorite Jane Remover song right now!</p>
+        <iframe width="420" height="236"
+            src="https://www.youtube.com/embed/2rwvuf6i9GA"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
     </div>
 </body>
 </html>

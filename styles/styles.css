@@ -1,4 +1,5 @@
 :root {
+  /* Global color palette and design tokens used throughout the site. */
   --bg: #f3f2f0;
   --panel: #eceae7;
   --panel-strong: #d9d4cf;
@@ -11,14 +12,17 @@
   --shadow: rgba(23, 23, 23, 0.12);
 }
 
+/* Base layout and box sizing for all elements. */
 * {
   box-sizing: border-box;
 }
 
+/* Smooth scrolling for in-page navigation. */
 html {
   scroll-behavior: smooth;
 }
 
+/* Main page styling and overall typography. */
 body {
   margin: 0px 50px 0px 50px;
   font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
@@ -31,6 +35,7 @@ body {
   padding-bottom: 50px;
 }
 
+/* Default font and text styling for key interface elements. */
 h1, h2, h3, h4, h5, h6,
 p, a, button, input, textarea, select {
   font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
@@ -38,19 +43,23 @@ p, a, button, input, textarea, select {
   text-transform: uppercase;
 }
 
+/* Heading typography and spacing. */
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.8rem;
   line-height: 1.1;
   font-weight: 700;
 }
 
+/* Paragraph text should read more naturally than uppercase headings. */
 p {
   margin: 0 0 1rem;
   text-transform: none;
   letter-spacing: 0.04em;
 }
 
+/* Ensure images scale responsively and sit flush in the layout. */
 img {
   max-width: 100%;
   display: block;
 }
+
